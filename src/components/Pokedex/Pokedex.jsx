@@ -10,7 +10,7 @@ const Pokedex = () => {
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon/pikachu');
+        const response = await axios.get('https://pokeapi.co/api/v2/pokemon/154');
         setPokemon(response.data);
         console.log(pokemon);
         setLoading(false);
