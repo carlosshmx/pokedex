@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;;
+}
+
+body{
+  background-image: url("./assets/background_prairie_pokemon_screencapture_by_nemotrex_de8nlib-fullview.jpg");
+  background-size: cover;   
+} 
+
+a{
+ cursor: pointer;
+}
+
+button {
+ 
+}
+button:hover {
+
+}
+button:focus,
+button:focus-visible {
+
+}
+
+@media (prefers-color-scheme: light) {
+
+}
