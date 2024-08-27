@@ -1,27 +1,32 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './pokedex.module.css'
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Pokedex = () => {
+  const {id} = useParams();
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+    setLoading(true);
     const fetchPokemon = async () => {
       try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon/154');
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
         setPokemon(response.data);
         console.log(pokemon);
         setLoading(false);
       } catch (error) {
         setError(error);
         console.log(error);
-        setLoading(false);
+        navigate("/error")
       }
     };
     fetchPokemon();
-  }, []); 
+  }, [id]); 
 
 
   return (

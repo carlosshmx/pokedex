@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Pokedex from './components/Pokedex/Pokedex'
 import Home from './components/Home/Home'
+import Error from './components/Home/Error'
 
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='pokedex' element={<Pokedex/>}/>
-      <Route path='*' element={<h1>Error 404</h1>}/>
+      <Route path='pokedex/:id' element={<Pokedex/>}/>
+      <Route path='*' element={<Error/>}/>
     </Routes>
     </>
   )
