@@ -11,6 +11,21 @@ const Pokedex = () => {
 
   const navigate = useNavigate();
 
+  const nextPokemon = ( )=>{
+    const currentID = pokemon.id;
+    if(currentID < 1025){
+      navigate(`/pokedex/${currentID+1}`)
+    }
+  }
+
+  const prevPokemon = ( )=>{
+    const currentID = pokemon.id;
+    if(currentID > 1){
+      navigate(`/pokedex/${currentID-1}`)
+    }
+    
+  }
+
   useEffect(() => {
     setLoading(true);
     const fetchPokemon = async () => {
@@ -45,8 +60,8 @@ const Pokedex = () => {
             <p>#{pokemon.id}</p>
           </div>
           <div>
-            <button className={styles.bbutton}>B</button>
-            <button className={styles.abutton}>A</button>
+            <button className={styles.bbutton} onClick={prevPokemon}>B</button>
+            <button className={styles.abutton} onClick={nextPokemon}>A</button>
           </div>
           
         </div>
@@ -66,8 +81,11 @@ const Pokedex = () => {
       </div>
     </div>
     ):(
-      "Cargando..."
-    )}
+      <div>
+        <h2>Cargando...</h2>
+        <img className={styles.errorImg} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png?20161023215848" alt="" />
+      </div>
+      )}
     
     </>
   )

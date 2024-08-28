@@ -5,29 +5,32 @@ import { Link, useNavigate } from 'react-router-dom';
 const Navbar = () => {
 
   const navigate =useNavigate()
-  const [id, setId] = useState(1);
+  const [id, setId] = useState('');
 
   const handleChangeSeach = (e)=>{
     setId(e.target.value);
 
   }
 
-  const handleOnClick = ()=>{
+
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
     navigate(`/pokedex/${id}`);
-    
+    setId('')
   }
 
   return (
     <>
-      <div className={NavbarStyle.container}>
+      <form className={NavbarStyle.container} onSubmit={handleSubmit}>
         <ul className={NavbarStyle.list}>
           <li className={NavbarStyle.logo}><Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" alt="" />Pokedex</Link></li>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="generations">Generations</Link></li>
-          <li><Link to={`/pokedex/${id}`}>Pokedex</Link></li>
-          <li><input type="text" placeholder="name or number" onChange={handleChangeSeach}/><button onClick={handleOnClick}>Seach</button></li>
+          <li><Link to="/generations">Generations</Link></li>
+          <li><Link to={`/pokedex/1`}>Pokedex</Link></li>
+          <li><input type="text" placeholder="name or number" onChange={handleChangeSeach} value={id} required/><button type="submit">Seach</button></li>
         </ul>
-      </div>
+      </form>
     </>
   )
 }

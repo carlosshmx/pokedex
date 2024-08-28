@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Pokedex from './components/Pokedex/Pokedex'
 import Home from './components/Home/Home'
 import Error from './components/Home/Error'
+import {Generations , GenerationsID} from './components/Generations/Generations'
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='pokedex/:id' element={<Pokedex/>}/>
+      <Route path='generations' element={<Generations/>}/>
+      <Route path='generations/:id' element={<GenerationsID/>}/>
       <Route path='*' element={<Error/>}/>
     </Routes>
     </>
