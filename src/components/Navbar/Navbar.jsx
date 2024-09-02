@@ -28,7 +28,7 @@ const Navbar = () => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/generations">Generations</Link></li>
           <li><Link to={`/pokedex/1`}>Pokedex</Link></li>
-          <li><input type="text" placeholder="name or number" onChange={handleChangeSeach} value={id} required/><button type="submit">Seach</button></li>
+          <li><input type="text" placeholder="name or number" role="textbox" onChange={handleChangeSeach} value={id} required/><button type="submit">Seach</button></li>
         </ul>
       </form>
     </>

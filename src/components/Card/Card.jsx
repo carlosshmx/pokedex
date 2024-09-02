@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
 
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -22,7 +24,7 @@ const Card = (props) => {
   }, []); 
   return (
     <>{!loading ? (
-      <div>
+      <div onClick={()=>navigate(`/pokedex/${props.id}`)}>
           <div>
             <img src={pokemon.sprites.front_default} alt="" />
           </div>
