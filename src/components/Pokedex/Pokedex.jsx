@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './pokedex.module.css'
 import { useNavigate, useParams } from 'react-router-dom';
+import Loading from '../Loading/Loading';
+import { upperFirstLetter } from '../../Utils/letters';
 
 const Pokedex = () => {
   const {id} = useParams();
@@ -56,7 +58,7 @@ const Pokedex = () => {
         </div>
         <div className={styles.buttonContainer}>
           <div className={styles.miniScreen}>
-            <p>{pokemon.name}</p>
+            <p>{upperFirstLetter(pokemon.name)}</p>
             <p>#{pokemon.id}</p>
           </div>
           <div>
@@ -81,10 +83,7 @@ const Pokedex = () => {
       </div>
     </div>
     ):(
-      <div>
-        <h2>Cargando...</h2>
-        <img className={styles.errorImg} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png?20161023215848" alt="" />
-      </div>
+     <Loading/>
       )}
     
     </>

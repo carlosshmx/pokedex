@@ -1,0 +1,40 @@
+.containerGens{
+    padding-top: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.listGens{
+    display: flex;
+    flex-direction: column;
+    color: antiquewhite;
+}
+
+.listGens a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.500);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.listGens a:hover{
+    color: firebrick;
+}
+
+
+.listPokeContainer{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+.listPoke{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
