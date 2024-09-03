@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 import genStyles from './generations.module.css'
 import Loading from "../Loading/Loading";
 import { startersPokemon } from "../../Utils/Pokemon";
-
+import GenerationCard from "./GenerationCard";
 
 export const Generations = () => {
 
@@ -23,18 +23,6 @@ export const Generations = () => {
         const generationsGet = await axios.get(`https://pokeapi.co/api/v2/generation/`);
         setGenerations(generationsGet.data);
 
-
-        // const imagesGet = 
-        //   startersPokemon.forEach((generation)=>
-        //     generation.forEach(async(pokemon,index)=>
-        //       await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon[index]}`) 
-        //     )
-        //   )
-  
-        // setStarters(imagesGet);
-
-        // console.log(starters);
-
         const fetchStarters = async () => {
           try {
             const allStartersData = await Promise.all(
@@ -46,22 +34,21 @@ export const Generations = () => {
     
                 const pokemonData = await Promise.all(pokemonDataPromises);
                 return {
-                  generation: generation.gen,
-                  starters: pokemonData,
+                  pokemonData
                 };
               })
             );
     
             setStarters(allStartersData);
+            setLoading(false);
           } catch (error) {
             console.error("Error fetching starter Pokémon data:", error);
           }
         };
     
         fetchStarters();
-        console.log(starters);
 
-        setLoading(false);
+        
       } catch (error) {
         setError(error);
         console.log(error);
@@ -79,24 +66,13 @@ export const Generations = () => {
       <div className={genStyles.containerGens}>
         <ul className={genStyles.listGens}>
           {generations.results.map((gen,index)=>(
-            <Link to={`../generations/${index+1}`} key={index}>  
-            {startersPokemon[index].gen} Generation 
-            <div> 
-              <ul>
-                {/* {starters.map((pokemon))} */}
-              </ul>
-            </div>    
-            </Link>))}
+            <GenerationCard index={index} starters={starters} key={index}/>          
+          ))} 
         </ul> 
       </div>
       
-    ):(
-      <Loading/>
-    )
-      
-
+    ):(<Loading/>)
     }
-      
     </>
   )
 }
@@ -160,13 +136,13 @@ export const GenerationsID = ()=>{
         <>
         {console.log(pokemonPokedex)}  
         <div className={genStyles.listPokeContainer}>
-          <h2>Generation {generation.id}</h2>
+          <h2>Generation #{generation.id}</h2>
           <ul className={genStyles.listPoke}>
             {pokemonPokedex.map((pokemon, index)=>(<Card key={index} id={pokemon.name}/>))} 
           </ul> 
         </div>
         
-        </>
+        </> 
          
       ):(
         <Loading/>    

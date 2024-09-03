@@ -7,13 +7,21 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+    color: antiquewhite;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.cardContainer:hover{
+    color: firebrick;
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .cardContainer img{
     width: 100px;
-    transform: scale(1.5);
-}
-
-.desc{
-    color: antiquewhite;
+    transform: scale(1.3);
 }

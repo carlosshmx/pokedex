@@ -1,34 +1,49 @@
 .containerGens{
     padding-top: 20px;
-    width: 300px;
-    margin: 0 auto;
 }
 
 .listGens{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     color: antiquewhite;
+    justify-content: center;
 }
 
-.listGens a{
+.itemGen{
     text-decoration: none;
     color: antiquewhite;
     font-size: 2rem;
     background-color: rgba(0, 0, 0, 0.500);
     border-radius: 30px;
-    padding: 10px;
-    margin: 5px;
+    padding: 10px;  
+    margin: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+    overflow: hidden;
 }
 
-.listGens a:hover{
+.itemGen:hover{
     color: firebrick;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.itemGen img{
+    width: 150px;
+}
+
+.itemGen ul{
+    display: flex;
+}
 
 .listPokeContainer{
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+.listPokeContainer h2{
+    font-size: 35px;
 }
 
 
