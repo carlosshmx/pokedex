@@ -5,6 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { upperFirstLetter } from '../../Utils/letters';
 import { usePokemonStates } from '../../Context/Context';
+import ButtonA from '../Buttons/ButtonA';
+import { types } from '../../Utils/Pokemon';
 
 const Pokedex = () => {
   const { pokemonInfo, pokeId, setPokeId, loading} = usePokemonStates();
@@ -39,6 +41,7 @@ const Pokedex = () => {
   return (
     <>
     {!loading ? (
+      <>
       <div className={styles.redBigSquare}>
       <div className={styles.leftPanel}>
         <div className={styles.whiteFrame}>
@@ -48,7 +51,7 @@ const Pokedex = () => {
         </div>
         <div className={styles.buttonContainer}>
           <div className={styles.miniScreen}>
-            <p>{upperFirstLetter(pokemonInfo.name)}</p>
+            <h3>{upperFirstLetter(pokemonInfo.name)}</h3>
             <p>#{pokemonInfo.id}</p>
           </div>
           <div>
@@ -61,8 +64,17 @@ const Pokedex = () => {
         
       <div className={styles.rigthScreen}>
             <h3>Types</h3>
-            <p>Main: {pokemonInfo.types[0].type.name}</p>
-            {pokemonInfo.types[1] ? <p>Secundary: {pokemonInfo.types[1].type.name}</p> : null}
+            <p 
+            className={styles.pokeType} 
+            style={{backgroundColor: types[types.findIndex(type=>type.name == pokemonInfo.types[0].type.name)].color}}>
+              {pokemonInfo.types[0].type.name}</p>
+
+            {pokemonInfo.types[1] ? <p
+            className={styles.pokeType}
+            style={{backgroundColor: types[types.findIndex(type=>type.name == pokemonInfo.types[1].type.name)].color}} 
+            >
+              {pokemonInfo.types[1].type.name}
+              </p> : null}
             <h3>Anatomy</h3>
             <p>Height: {pokemonInfo.height < 10 ? ("0,"+pokemonInfo.height) : (pokemonInfo.height/10)} m</p>
             <p>Weight: {pokemonInfo.weight/10} kg</p>
@@ -72,6 +84,8 @@ const Pokedex = () => {
             {pokemonInfo.stats.map((item, index)=> (<p key={index}>{item.stat.name}: {item.base_stat}</p>))}
       </div>
     </div>
+    <ButtonA target={'generations'}>Back to generations</ButtonA>
+    </>
     ):(
      <Loading/>
       )}

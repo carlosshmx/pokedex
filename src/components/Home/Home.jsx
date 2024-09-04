@@ -1,6 +1,6 @@
 import pokedex from '../../assets/pokedex.png';
 import homeStyle from './home.module.css';
-import ButtonA from './ButtonA';
+import ButtonA from '../Buttons/ButtonA';
 
 const Home = () => {
   return (

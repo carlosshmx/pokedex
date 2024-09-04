@@ -29,15 +29,19 @@
 }
 
 .itemGen img{
-    width: 150px;
+    width: 33%;
+    max-width: 110px;
+    
 }
 
 .itemGen ul{
     display: flex;
+    justify-content: center;
 }
 
 .listPokeContainer{
-    width: 80%;
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -46,6 +50,10 @@
     font-size: 35px;
 }
 
+.listHeader{
+    display: flex;
+    justify-content: space-between;
+}
 
 .listPoke{
     margin-top: 10px;

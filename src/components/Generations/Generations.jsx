@@ -6,6 +6,7 @@ import genStyles from './generations.module.css'
 import Loading from "../Loading/Loading";
 import { startersPokemon } from "../../Utils/Pokemon";
 import GenerationCard from "./GenerationCard";
+import ButtonB from "../Buttons/ButtonB";
 
 export const Generations = () => {
 
@@ -136,7 +137,11 @@ export const GenerationsID = ()=>{
         <>
         {console.log(pokemonPokedex)}  
         <div className={genStyles.listPokeContainer}>
-          <h2>Generation #{generation.id}</h2>
+          <div className={genStyles.listHeader}>
+            <ButtonB target={'/generations'}>Back</ButtonB>
+            <h2>Generation #{generation.id}</h2>
+            <p>Filter-func</p>
+          </div>
           <ul className={genStyles.listPoke}>
             {pokemonPokedex.map((pokemon, index)=>(<Card key={index} id={pokemon.name}/>))} 
           </ul> 
