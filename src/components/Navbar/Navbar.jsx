@@ -27,9 +27,10 @@ const Navbar = () => {
     <>
       <form className={NavbarStyle.container} onSubmit={handleSubmit}>
         <ul className={NavbarStyle.list}>
-          <li className={NavbarStyle.logo}><Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" alt="" />Pokedex</Link></li>
+          <li className={NavbarStyle.logo}><Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" alt="" />PokeReact</Link></li>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/generations">Generations</Link></li>
+          <li><Link to="/Types">Types</Link></li>
           <li><Link to={`/pokedex/${pokeId}`}>Pokedex</Link></li>
           <li><input type="text" placeholder="name or number" role="textbox" onChange={handleChangeSeach} value={id} required/><button type="submit">Seach</button></li>
         </ul>

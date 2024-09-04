@@ -24,12 +24,20 @@
     font-weight: bold;
 }
 
+.list li{
+    transition: transform 0.2s ease;
+}
+
+.list li:hover{
+    transform: scale(1.2); 
+}
+
+
 .list li a{
     color: inherit;
     text-decoration: none;
- 
+    
 }
-
 
 .list li input{
     height: 1.5rem;

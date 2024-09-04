@@ -1,0 +1,18 @@
+.buttonA{
+    background-color: firebrick;
+    border-radius: 30px;
+    width: 150px;
+    height: 30px;
+    color: antiquewhite;
+    font-size: 15px;
+    border: none;
+    margin: 5px;
+    filter: drop-shadow(3px 7px 8px #0000006a);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.buttonA:hover{
+    transform: scale(1.1);
+ 
+}
