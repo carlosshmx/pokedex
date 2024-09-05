@@ -136,12 +136,13 @@ export const GenerationsID = ()=>{
       {!loading ? (
         <>
         {console.log(pokemonPokedex)}  
-        <div className={genStyles.listPokeContainer}>
-          <div className={genStyles.listHeader}>
+        <div className={genStyles.listHeader}>
             <ButtonB target={'/generations'}>Back</ButtonB>
             <h2>Generation #{generation.id}</h2>
             <p>Filter-func</p>
           </div>
+        <div className={genStyles.listPokeContainer}>
+          
           <ul className={genStyles.listPoke}>
             {pokemonPokedex.map((pokemon, index)=>(<Card key={index} id={pokemon.name}/>))} 
           </ul> 

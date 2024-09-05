@@ -1,0 +1,28 @@
+.listHeader{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.typesContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.typesContainer ul{
+    width: 90%;
+    max-width: 750px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.typesContainer img{
+    width: 100px;
+    filter: drop-shadow(3px 7px 8px #0000006a);
+    margin: 10px;
+}
+
+h3{
+    color: antiquewhite;
+    filter: drop-shadow(3px 7px 8px #0000006a);
+}

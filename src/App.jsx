@@ -6,6 +6,7 @@ import Home from './components/Home/Home'
 import Error from './components/Home/Error'
 import {Generations , GenerationsID} from './components/Generations/Generations'
 import Context from './Context/Context'
+import Types from './components/Types/Types'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path='pokedex/:id' element={<Pokedex/>}/>
       <Route path='generations' element={<Generations/>}/>
       <Route path='generations/:id' element={<GenerationsID/>}/>
+      <Route path='types' element={<Types/>}/>
       <Route path='*' element={<Error/>}/>
     </Routes>
     </>

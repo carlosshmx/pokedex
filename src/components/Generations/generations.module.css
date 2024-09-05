@@ -46,13 +46,11 @@
     margin-top: 20px;
 }
 
-.listPokeContainer h2{
-    font-size: 35px;
-}
 
 .listHeader{
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .listPoke{
