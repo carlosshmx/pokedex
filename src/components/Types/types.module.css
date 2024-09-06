@@ -14,13 +14,24 @@
     max-width: 750px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.typesContainer li{
+    margin: 5px;
 }
 
 .typesContainer img{
     width: 100px;
     filter: drop-shadow(3px 7px 8px #0000006a);
-    margin: 10px;
+    margin: 5px;
+    transition: transform 0.3s ease;
 }
+
+.typesContainer img:hover{
+    transform: scale(1.1);
+}
+
 
 h3{
     color: antiquewhite;
