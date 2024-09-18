@@ -1,16 +1,57 @@
 .container{
-    width: 100vw;
+    width: 100%;
     background-color: firebrick;
-    padding: 0.5rem 0;
-    
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
 }
 
 .list{
     color: white;
-    display: flex;    
+    display: flex;  
+    gap: 0.7rem;  
     list-style: none;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+.listMobile{
+    background-color: firebrick;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2rem;
+    list-style: none;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.open {
+    height: 0;
+}
+
+.listMobile li{
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.logo i{
+    width: 25px;
+    color: antiquewhite;
+    font-size: 2rem;
+    padding: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .logo img{
@@ -28,32 +69,64 @@
     transition: transform 0.2s ease;
 }
 
+
 .list li:hover{
     transform: scale(1.2); 
 }
 
-
-.list li a{
-    color: inherit;
+a{
+    color:antiquewhite;
     text-decoration: none;
     
 }
 
-.list li input{
+.list div{
+    display: flex;
+}
+
+input{
     height: 1.5rem;
     border-radius: 50px 0 0 50px;
     border: 0;
     padding-left: 1rem;
 }
 
-.list li input:focus{
+.list input:focus{
     outline: none;
 }
 
-.list li button{
+button{
     height: 1.5rem;
     width: 3rem;
     border-radius: 0 50px 50px 0;
     border: 0;
     cursor: pointer;
+    margin: 0;
+}
+
+@media(max-width: 650px){
+    .list{
+        padding-right: 5px;
+    }
+    .list li{
+        display: none;
+    }
+
+    input{
+        width: 120px;
+    }
+
+    .logo a{
+        font-size: 1rem;
+    }
+
+    .logo i{
+        font-size: 2rem;
+        display: inline;
+    }
+
+    .open {
+        height: 150px;
+    }
+ 
 }

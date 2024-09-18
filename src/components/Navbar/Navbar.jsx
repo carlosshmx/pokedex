@@ -10,6 +10,12 @@ const Navbar = () => {
   const navigate =useNavigate()
   const [id, setId] = useState('');
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+      setIsOpen(!isOpen);
+  };
+
   const handleChangeSeach = (e)=>{
     setId(e.target.value);
 
@@ -26,15 +32,27 @@ const Navbar = () => {
   return (
     <>
       <form className={NavbarStyle.container} onSubmit={handleSubmit}>
-        <ul className={NavbarStyle.list}>
-          <li className={NavbarStyle.logo}><Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" alt="" />PokeReact</Link></li>
+        <div className={NavbarStyle.logo}>
+          <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
+          <Link to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" alt="" />PokeReact</Link></div>
+        <ul className={NavbarStyle.list}>  
+          
           <li><Link to="/">Home</Link></li>
           <li><Link to="/generations">Generations</Link></li>
           <li><Link to="/types">Types</Link></li>
           <li><Link to={`/pokedex/${pokeId}`}>Pokedex</Link></li>
-          <li><input type="text" placeholder="name or number" role="textbox" onChange={handleChangeSeach} value={id} required/><button type="submit">Seach</button></li>
         </ul>
+        <div>
+            <input type="text" placeholder="name or number" role="textbox" onChange={handleChangeSeach} value={id} required/>
+            <button type="submit">Search</button>
+          </div>
       </form>
+      <ul className={`${NavbarStyle.listMobile} ${isOpen ? NavbarStyle.open : ''}`}>  
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/generations">Generations</Link></li>
+          <li><Link to="/types">Types</Link></li>
+          <li><Link to={`/pokedex/${pokeId}`}>Pokedex</Link></li>
+        </ul>
     </>
   )
 }
