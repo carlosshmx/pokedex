@@ -8,6 +8,11 @@
     flex-wrap: wrap;
 }
 
+.panel1 img{
+    width: 300px;
+    margin-bottom: 20px;
+}
+
 .panelCard{
     width: 300px;
     min-width: 230px;
