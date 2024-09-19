@@ -1,8 +1,14 @@
-h2{
-    margin-top: 50px;
-    color: white;
+.errorContainer{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+h2{
+    color: white;
 }
 img{
-    width: 300px;
+    width: 250px;
 }

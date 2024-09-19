@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   const handleChangeSeach = (e)=>{
-    setId(e.target.value);
+    setId(e.target.value.toLowerCase());
 
   }
 
