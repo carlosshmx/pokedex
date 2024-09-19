@@ -1,8 +1,16 @@
-import { useContext, createContext, useState, useEffect } from "react"
+import { useContext, createContext, useState, useEffect, useReducer} from "react"
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { reducer } from "./reducer";
 
 const PokemonStates = createContext();
+
+
+export const initialState = {
+  totalPokemons: [],
+  currentID: 0,
+  currentPokemon: []
+}
 
 
 const Context = ({children}) => {
@@ -11,7 +19,13 @@ const Context = ({children}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const navigate = useNavigate();
+
+  // useEffect(()=>{
+
+  // })
  
   useEffect(() => {
     setLoading(true);

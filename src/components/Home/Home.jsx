@@ -13,7 +13,7 @@ const Home = () => {
           <p>Let´s go, touch an option</p>
           <div>
             <ButtonA target='generations'>Find by generation</ButtonA>
-            <ButtonA>Find by type</ButtonA>
+            <ButtonA target='types'>Find by type</ButtonA>
           </div>
         </div>
       </div>

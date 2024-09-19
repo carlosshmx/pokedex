@@ -1,6 +1,7 @@
 import { types } from "../../Utils/Pokemon"
 import { upperFirstLetter } from "../../Utils/letters"
 import style from "./types.module.css"
+import { Link } from "react-router-dom"
 
 const Types = () => {
   return (
@@ -12,10 +13,10 @@ const Types = () => {
         <div className={style.typesContainer}>
             <ul>
                 {types.map((type, index)=>(
-                    <li key={index}>
+                    <Link to={`../types/${type.name}`}  key={index}>
                         <img src={type.img} alt={type.name} />
                         <h3>{upperFirstLetter(type.name)}</h3>
-                    </li>))}
+                    </Link>))}
             </ul>
         </div>
        

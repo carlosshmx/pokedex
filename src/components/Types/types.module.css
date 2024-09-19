@@ -37,3 +37,17 @@ h3{
     color: antiquewhite;
     filter: drop-shadow(3px 7px 8px #0000006a);
 }
+
+.listPokeContainer{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.listPoke{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
