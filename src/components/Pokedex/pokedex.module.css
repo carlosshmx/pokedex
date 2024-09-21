@@ -76,9 +76,13 @@
     align-items: center;
 }
 
+.buttonContainer h3{
+    font-size: 100%;
+}
+
 .miniScreen{
     width: 150px;
-    height: 50px;
+    height: 65px;
     color: antiquewhite;
     border-radius: 10px;
     border: black 2px solid;
