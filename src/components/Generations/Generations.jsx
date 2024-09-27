@@ -137,9 +137,8 @@ export const GenerationsID = ()=>{
         <>
         {console.log(pokemonPokedex)}  
         <div className={genStyles.listHeader}>
-            <ButtonB target={'/generations'}>Back</ButtonB>
+            {/* <ButtonB target={'/generations'}>Back</ButtonB> */}
             <h2>Generation #{generation.id}</h2>
-            <p>Filter-func</p>
           </div>
         <div className={genStyles.listPokeContainer}>
           
