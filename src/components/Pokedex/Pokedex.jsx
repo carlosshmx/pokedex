@@ -19,16 +19,18 @@ const Pokedex = () => {
   const currentID = pokemonInfo.id
 
   const nextPokemon = ( )=>{
-    if(currentID < 1025){
-      setPokeId(currentID+1)
-      navigate(`/pokedex/${currentID+1}`)
+    if((currentID >= 1 && currentID < 1025) || (currentID >= 10001 && currentID < 10277 )){
+      setPokeId(currentID+1);
+    }else if(currentID == 1025){
+      setPokeId(10001);
     }
   }
 
   const prevPokemon = ( )=>{
-    if(currentID > 1){
+    if((currentID > 1 && currentID <= 1025) || (currentID > 10001 && currentID <= 10278 )){
       setPokeId(currentID-1)
-      navigate(`/pokedex/${currentID-1}`)
+    }else if(currentID == 10001){
+      setPokeId(1025)
     }
     
   }

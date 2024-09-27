@@ -112,7 +112,7 @@
     background-color: green;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 590px) {
     .redBigSquare{
         width: 90%;
         min-width: 350px;
