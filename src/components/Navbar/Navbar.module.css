@@ -19,7 +19,7 @@
     padding: 0.5rem 0.5rem;
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content:space-evenly;
     position: fixed;
     top: 0;
     z-index: 1000;

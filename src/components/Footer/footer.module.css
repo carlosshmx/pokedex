@@ -1,0 +1,48 @@
+.container{
+    background-color: firebrick;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.container ul{
+    list-style: none;
+    text-align: start;
+}
+
+
+.container li{
+    margin: 0.5rem;
+}
+
+.container li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h4{
+    color: antiquewhite;
+}
+
+p{
+    color: antiquewhite;
+}
+
+i{
+    font-size: 1.5rem;
+}
+
+@media(max-width: 650px){
+    .container{
+        flex-direction: column;
+    }
+
+    .container ul{
+        display: flex;
+    }
+
+
+}

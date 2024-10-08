@@ -8,23 +8,27 @@ import {Generations , GenerationsID} from './components/Generations/Generations'
 import Context from './Context/Context'
 import Types from './components/Types/Types'
 import TypesSel from './components/Types/TypesSel'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
 
   return (
-    <>
+    <div className='container'>
     <Navbar/>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='pokedex/:id' element={<Pokedex/>}/>
-      <Route path='generations' element={<Generations/>}/>
-      <Route path='generations/:id' element={<GenerationsID/>}/>
-      <Route path='types' element={<Types/>}/>
-      <Route path='types/:type' element={<TypesSel/>}/>
-      <Route path='*' element={<Error/>}/>
-    </Routes>
-    </>
+    <main>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='pokedex/:id' element={<Pokedex/>}/>
+        <Route path='generations' element={<Generations/>}/>
+        <Route path='generations/:id' element={<GenerationsID/>}/>
+        <Route path='types' element={<Types/>}/>
+        <Route path='types/:type' element={<TypesSel/>}/>
+        <Route path='*' element={<Error/>}/>
+      </Routes>
+    </main>
+    <Footer/>
+    </div>
   )
 }
 
