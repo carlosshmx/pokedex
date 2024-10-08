@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NavbarStyle from "./Navbar.module.css"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink , useNavigate } from 'react-router-dom';
 import { usePokemonStates } from "../../Context/Context";
 
 const Navbar = () => {
@@ -35,14 +35,14 @@ const Navbar = () => {
       <div className={`${isOpen ? NavbarStyle.disableApp : ''}`}></div>
       <form className={NavbarStyle.container} onSubmit={handleSubmit}>
         <div className={NavbarStyle.logo}>
-          <i className="fa-solid fa-bars" onClick={toggleMenu}></i>
+          {isOpen ? <i class="fa-solid fa-x" onClick={toggleMenu}></i> : <i className="fa-solid fa-bars" onClick={toggleMenu}></i>}
           <Link to="/" onClick={()=>setIsOpen(false)}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" alt="" />PokeReact</Link></div>
         <ul className={NavbarStyle.list}>  
           
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/generations">Generations</Link></li>
-          <li><Link to="/types">Types</Link></li>
-          <li><Link to={`/pokedex/${pokeId}`}>Pokedex</Link></li>
+          <li><NavLink to="/" className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Home</NavLink></li>
+          <li><NavLink to="/generations" className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Generations</NavLink></li>
+          <li><NavLink to="/types" className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Types</NavLink></li>
+          <li><NavLink to={`/pokedex/${pokeId}`} className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Pokedex</NavLink></li>
         </ul>
         <div>
             <input type="text" placeholder="name or number" role="textbox" onChange={handleChangeSeach} value={id} required/>
@@ -50,10 +50,10 @@ const Navbar = () => {
           </div>
       </form>
       <ul className={`${NavbarStyle.listMobile} ${isOpen ? NavbarStyle.open : ''}`}>  
-          <li><Link to="/" onClick={()=>setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/generations" onClick={()=>setIsOpen(false)}>Generations</Link></li>
-          <li><Link to="/types" onClick={()=>setIsOpen(false)}>Types</Link></li>
-          <li><Link to={`/pokedex/${pokeId}`} onClick={()=>setIsOpen(false)}>Pokedex</Link></li>
+          <li><NavLink to="/" onClick={()=>setIsOpen(false)} className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Home</NavLink></li>
+          <li><NavLink to="/generations" onClick={()=>setIsOpen(false)} className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Generations</NavLink></li>
+          <li><NavLink to="/types" onClick={()=>setIsOpen(false)} className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Types</NavLink></li>
+          <li><NavLink to={`/pokedex/${pokeId}`} onClick={()=>setIsOpen(false)} className={({ isActive }) => isActive ? NavbarStyle.active : undefined}>Pokedex</NavLink></li>
         </ul>
     </>
   )

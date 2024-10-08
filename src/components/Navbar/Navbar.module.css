@@ -123,6 +123,14 @@ button{
     margin: 0;
 }
 
+.active {
+    font-weight: bold;
+    background-color: antiquewhite;
+    color: firebrick;
+    padding: 2px 5px;
+    border-radius: 10px;
+  }
+
 @media(max-width: 650px){
     .list{
         padding-right: 5px;

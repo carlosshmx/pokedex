@@ -1,5 +1,7 @@
 .containerGens{
-    padding-top: 20px;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
 .listGens{
@@ -43,7 +45,7 @@
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 
@@ -58,4 +60,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.listHeader h2{
+    background-color: antiquewhite;
+    color: firebrick;
+    padding: 5px 8px;
+    border-radius: 10px;
 }
